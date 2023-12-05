@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1">
+    <meta name="description" content="If you want to play XO game with Intelligent bot or your friend you should try this web site" />
+    <title>xo game</title>
+    <link rel="stylesheet" href="xo.css"> 
+    <link rel="stylesheet" href="anim.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="canonical" href="https://xo-game1.firebaseapp.com/" />
+    <meta property="og:site_name" content="xo game">
+    <meta property="og:image" content="./XOgame.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:description" content="If you want to play XO game with Intelligent bot or your friend you should try this web site" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://xo-game1.firebaseapp.com/" />
+    <meta name="google-adsense-account" content="ca-pub-7370876801610940">
+    <link rel="shortcut icon" href="./XO Shourtcuticon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370876801610940"
+     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.onload = ()=>{
+          
+        }
+        
+    </script>
+    <style>
+      .main-nav {
+            top: 0;
+            z-index: 999;
+            left: 0;
+        }
+
+        .main-nav .nav-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.8em;
+            color: white;
+            border: 1px solid white;
+            width: 1.6em;
+            height: 1.6em;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .main-nav .nav-btn .nav-icon {
+            display: contents;
+        }
+
+        .main-nav .nav-btn .nav-icon span,
+        .main-nav .nav-btn .nav-icon::after,
+        .main-nav .nav-btn .nav-icon::before {
+            content: "";
+            width: 20px;
+            position: absolute;
+            display: block;
+            height: 3px;
+            border-radius: 50px;
+            background-color: white;
+            pointer-events: none;
+            transition: var(--transition4);
+            margin: 3px 0;
+        }
+
+        .main-nav .nav-btn .nav-icon:before {
+            transform: translateY(-6px);
+        }
+
+        .main-nav .nav-btn .nav-icon:after {
+            transform: translateY(6px);
+        }
+
+
+
+        .main-nav nav {
+            width: 1.6em;
+            background: var(--primary-color);
+            border-radius: 1.6em;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            margin: 0 0.8em;
+            color: white;
+            padding: 0.6em 0;
+            position: absolute;
+            top: -9.68em;
+            transition: var(--transition4);
+            z-index: -1;
+            height: 5.44em;
+            border: 1px solid;
+        }
+
+        .main-nav nav ul {
+            width: 100%;
+        }
+
+        .main-nav nav ul li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .main-nav nav ul li span {
+            font-size: 1em;
+            user-select: none;
+        }
+
+        .main-nav nav ul li:nth-child(2) {
+            margin: 0.6em 0;
+        }
+
+        .main-nav .nav-btn.active+nav {
+            top: 1em;
+
+            clip-path: circle(161% at 50% 0);
+        }
+
+        .main-nav .nav-btn.active+nav ul li {
+            transition: var(--transition4);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .main-nav .nav-btn.active .nav-icon span {
+            transform: scaleX(0);
+
+        }
+
+        .main-nav .nav-btn.active .nav-icon::after {
+            transform: rotate(45deg);
+        }
+
+        .main-nav .nav-btn.active .nav-icon::before {
+            transform: rotate(-45deg);
+        }
+
+        /*loading*/
+        .loading-page{
+            position: fixed;
+            z-index: 1111;
+            top: 0;
+            background: var( --first-page-container-color);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .4s;
+        } 
+        .loading-page .loading{
+            display: flex;
+            align-items: center; height: 50px;
+        } 
+        @keyframes delay {
+          0%, 40%, 100% { 
+            transform: scaleY(0.05);
+            -webkit-transform: scaleY(0.05);
+          }  20% { 
+            transform: scaleY(1.0);
+            -webkit-transform: scaleY(1.0);
+          }
+        }
+        .loading-page .loading div{
+            height: 100%;
+            width: 8px;
+            display: inline-block;
+            float: left;
+            margin-left: 2px;
+            animation: delay 0.8s infinite ease-in-out;
+         
+    
+        }
+
+        .loading-page .loading .bar1{background-color: /*#754fa0*/ #ed1b72;}
+        .loading-page .loading .bar2{background-color: /*#09b7bf*/ #f36621; animation-delay: -0.7s;}
+        .loading-page .loading .bar3{background-color: /*#90d36b*/ #c64348; animation-delay: -0.6s;}
+        .loading-page .loading .bar4{background-color: /*#f2d40d*/ #a6368b; animation-delay: -0.5s;}
+        .loading-page .loading .bar5{background-color: /*#fcb12b*/ #a359d3; animation-delay: -0.4s;}
+        .loading-page .loading .bar6{background-color: /*#f73cbc #c13094*/#817aff;  animation-delay: -0.3s;}
+         .transitions div{
+            width: 200px;
+            height: 200px;
+            background: var( --first-page-container-color);
+            position: absolute;
+            z-index: 99;
+            transition: .7s;
+            transform: scale(10);
+        }
+        .transitions div.out{
+            animation: transOut .5s .5s forwards ease-in;
+
+        }
+        .transitions div.in{
+            animation: transin .7s .5s forwards;
+
+        }
+         .transitions .diamond-transition-1 {left: -100px;top: -100px;}
+         .transitions .diamond-transition-2 {right: -100px;bottom: -100px;}
+         @keyframes transin {
+             0%{transform:rotate(45deg) scale(0)}
+             50%{transform:rotate(45deg) scale(10)}
+            100%{transform:rotate(45deg) scale(0)}
+        }
+        @keyframes transOut {
+            0%{transform:rotate(45deg) scale(10)}
+            100%{transform:rotate(45deg) scale(0)}
+            
+        }
+        /*loading*/
+        .cpu-players .game-activity .difficulty .nav-ele-name{
+            display: flex;align-items: center;
+
+        }
+         .cpu-players .game-activity .difficulty .nav-ele-name .photo{
+            height: 30px;width:30px;
+         }
+                
+        .pl {
+            position: absolute;
+            top: -8.2px;
+            display: block;
+            width: 177.5px;
+            height: 177.5px;
+        }
+        .pl__ring, .pl__ball {
+            animation: ring 2s ease-out infinite;
+            stroke: var(--primary-color);
+        }
+        .pl__ball {
+            animation-name: ball;
+        }
+
+        /* Dark theme  */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: hsl(var(--hue),10%,10%);
+                --fg: hsl(var(--hue),10%,90%);
+            }
+        }
+
+        /* Animation */
+        @keyframes ring {
+            from {
+                stroke-dasharray: 0 257 0 0 1 0 0 258;
+            }
+            25% {
+                stroke-dasharray: 0 0 0 0 257 0 258 0;
+            }
+            50%, to {
+                stroke-dasharray: 0 0 0 0 0 515 0 0;
+            }
+        }
+        @keyframes ball {
+            from, 50% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: 1;
+            }
+            64% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -109;
+            }
+            78% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -145;
+            }
+            92% {
+                animation-timing-function: ease-in;
+                stroke-dashoffset: -157;
+            }
+            57%, 71%, 85%, 99%, to {
+                animation-timing-function: ease-out;
+                stroke-dashoffset: -163;
+            }
+        }
+        @media screen and (max-width:600px) {
+
+            .main-nav .nav-btn .nav-icon span,
+            .main-nav .nav-btn .nav-icon::after,
+            .main-nav .nav-btn .nav-icon::before {
+                width: 17px;
+                height: 0.166pc;
+                
+            }
+
+
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <section class="loading-page active">
+        <div class="d"style='display:flex;flex-direction:column;align-items: center;position: relative;'>
+         <div class="logo-name"style= 'display: contents;'>
+            <div class="logo"style="width: 160px;height: 160px;background:#313b4a;border-radius: 50%;overflow: hidden;"><img src="./logo-pre.png" alt="logo" width="160px"></div>
+            <svg class="pl" viewBox="0 0 200 200" width="350" height="350">
+                 <circle class="pl__ring" cx="100" cy="100" r="82" fill="none" stroke-width="15" stroke-dasharray="0 257 1 257" stroke-dashoffset="0.01" stroke-linecap="round" transform="rotate(-90,100,100)" />
+                 <line class="pl__ball"  x1="100" y1="18" x2="100.01" y2="182" stroke-width="15" stroke-dasharray="1 165" stroke-linecap="round" />
+             </svg>
+             <div class="name">
+                     <h2 style="font-family: Segoe Print;color: var(--primary-color);"><span style="color: var(--primary-color-2);" class="load-num">0</span>%</span>
+                     </h2>
+             </div>
+         </div>
+        </div> 
+         </section>
+         <div class="transitions">
+            <div class="diamond-transition-1"></div>
+            <div class="diamond-transition-2"></div>
+            </div>
+         <script>
+           
+                let loader =document.querySelector('.loading-page');
+                let trans =document.querySelectorAll('.transitions div');
+                let loadNum =document.querySelector('.loading-page .load-num');
+                let int = 50
+                let iiii = 0
+                let u = false
+                let uNum 
+                if (sessionStorage.first ==='yes') {
+                trans.forEach(e => {e.style.display ='none'})
+                loader.style.display ='none';document.body.style.overflowY='auto'
+                }
+                setInterval(() => {
+                   // iiii += 1
+                 //  if (iiii >= 3500) {
+                 //      if (+loadNum.innerHTML == 100) {
+                 //      clearInterval()
+                 //      uNum = true
+                 //      loader.style.opacity ='0';sessionStorage.setItem('first','yes');trans.forEach(e => {e.classList.add('out')});
+                 //      setTimeout(() => { loader.style.display ='none';document.body.style.overflowY='auto'}, 400); 
+                 //      }
+                 //      else{
+                 //      loadNum.innerHTML = +loadNum.innerHTML+1
+                 //  }
+                  // }
+                    if (+loadNum.innerHTML == 100) {
+                        clearInterval()
+                        uNum = true
+                    }
+                    else if(+loadNum.innerHTML >= 80 && u == false){
+                        clearInterval()
+                    }
+                    else{
+                        loadNum.innerHTML = +loadNum.innerHTML+1
+                    }
+                  
+                }, int);
+                window.onload =()=> {
+                    u =true
+                    setInterval(() => {
+                   if (uNum == true) {
+                       clearInterval()
+                       setTimeout(() => { 
+                           loader.style.opacity ='0';sessionStorage.setItem('first','yes');trans.forEach(e => {e.classList.add('out')});
+                           setTimeout(() => { loader.style.display ='none';document.body.style.overflowY='auto';}, 400); }
+                       , 800); 
+                       
+                   }
+                    },int)
+                    
+                }
+         </script>
+    <header>
+    <div class="container">
+            <!-- <div class="cdk-overlay " ></div>
+            <div class="main-nav">
+            <div class="nav-btn" 
+                onclick="window.onclick = (e)=> {this == e.target?this.classList.toggle('active') : this.parentElement.querySelector('nav ul') == e.target?'':this.classList.remove('active')  ;}">
+                <div class="nav-icon">
+                    <span></span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><span id="home" class="material-symbols-outlined"> home </span></li>
+                    <li><span id="info" class="material-symbols-outlined">info</span></li>
+                    <li><span id="volume" class="material-symbols-outlined">volume_up</span></li>
+                </ul>
+            </nav>
+        </div>  -->
+        <div class="sittings-gear" name="Volume" dire="rtr" sideTasks="describe-bar">
+            <span id="vUp"  onclick="vol(this)" class="material-symbols-rounded">volume_up</span>
+            <span id="vOff" onclick="vol(this)"  class="material-symbols-rounded none2">volume_off</span>              
+        </div>
+        </div>   
+    </header>
+    <div class="container-887989">
+   
+        <section class="first-page ">
+            <div class="container ">
+                <div class="tic-title">
+                    <h1><span class="xcolor">T</span>ic <span class="xcolor">T</span>ac <span class="xcolor">T</span>oe
+                    </h1>
+                </div>
+                <div class="main-container">
+                    <div class="x-o--icons--buttons ">
+                        <div class="x-o--icon">
+                            <div class="x-icon">
+                                <i class="fa-solid fa-x x-child"></i>
+                            </div>
+                            <div class="o-icon">
+                                <i class="fa-solid fa-o o-child"></i>
+                            </div>
+                        </div>
+                       
+                            <div class="new-game-buttons" style="position: relative;">
+                                <div class="remember">
+                                    <p><span class="spcial-span-color">Remember :</span>
+                                        X always play first in round 1
+                                        <!--, The game end if any player finish his points-->
+                                    </p>
+                                </div>
+                            <div class="new-cpu">
+                                <button id="cpu-P" etitle="cdk-menu" role="get-name--AI-game">
+                                    <div class="text"><i class="fa-solid fa-user"></i> vs <i class="fa-solid fa-robot"></i></div>
+                                </button>
+                            </div>
+                            <div class="new-2p">
+                                <button id="Hp-P" etitle="cdk-menu" role="get-name--2p-game">
+                                    <div class="text"><i class="fa-solid fa-user"></i> vs <i class="fa-solid fa-user"></i></div>
+                                </button>
+                            </div>
+            
+                        </div>
+                        <div class="his-board">
+                            <div class="" style="border-bottom: 2px solid var(--primary-color);padding: 0 3px;">
+                                <div class="history-part">
+                                    <span>History</span>
+                                </div>
+                            </div>
+                            <div class="player-board-box">
+                                <table class="plyer-brd-table">
+                                    <thead >
+                                        <tr class="player-brd-header">
+                                            <th class="game-type"><h5>Game</h5></th>
+                                            <th class="score-Winner"><h5>Score</h5> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                
+                                    </tbody>
+                                </table>
+                                
+                        
+                            </div>
+
+                            <div class="plyer-brd-btns">
+                                <div class="clear"><button>Clear All</button></div>
+                            </div>
+
+                        </div>
+                     
+                        
+                    </div>
+                   
+
+                </div> 
+               
+            </div>
+            
+        </section>
+        <div class="cdk-overlay-container hidden">
+            <div class="cdk-overlay dark" onclick="afClBtnCCl()"></div>
+            <div class="after-click-btn ">
+                <!----------------------------->
+                <div class="cpu-players none2">
+                    <div class="cdk-overlay " ></div>
+                    <div class="close-menu"  >
+                        <div id="close-btn "name="Close" dire= 'rlt'onclick="afClBtnCCl()" class="icon menu-btn"><span class="material-symbols-outlined">close</span></div>
+                            </div>
+                            <form action="" class="cpuPlayer-form first-form">
+                            
+                                <div class="note--activity">
+                                    <div class="xo-icon-part">
+                                        <div class="xo-icon">
+                                            <i class="fa-solid fa-x x-child"></i>
+                                            <i class="fa-solid fa-o o-child"></i>
+                                        </div>
+                                    </div>
+                                    <div class="game-activity">
+
+                                        <!--ele-->
+                                        <div class="difficulty activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Difficulty</span></div>
+                                            <div class="choose-ele">
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="Vector">
+                                                        <div class="nav-ele-name">
+                                                            <div class="photo-progress">
+                                                                <div class="photo"><img style="width: 150%;position: relative;top: 5px;" src="./user-photo/vector.png" alt="user"></div>
+                                                            </div>
+                                                            <p style="margin-left: 10px;">Medium 🙂</p>
+                                                            <input id="answer-input" type="hidden" value="Vector" name="diff">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                       <span class="material-symbols-outlined">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <nav class="choose-ele-nav">
+                                                    <div class="nav-el" id="Kronos">
+                                                        <div class="nav-ele-name">
+                                                            <div class="photo-progress">
+                                                                <div class="photo"><img  src="./user-photo/kronos.png" alt="robot"></div>
+                                                            </div>
+                                                            <p style="margin-left: 10px;">Easy 👶</p> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-el choosed" id="Vector">
+                                                        <div class="nav-ele-name">
+                                                            <div class="photo-progress">
+                                                                <div class="photo"><img style="width: 150%;position: relative;top: 5px;" src="./user-photo/vector.png" alt="robot"></div>
+                                                            </div>
+                                                            <p style="margin-left: 10px;">Medium 🙂</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-el" id="Marvin">
+                                                        <div class="nav-ele-name">
+                                                            <div class="photo-progress">
+                                                                <div class="photo"><img style="width:50px;width: 132%;position: relative;top: 8px;" src="./user-photo/marvin.png" alt="robot"></div>
+                                                          </div>
+                                                            <p style="margin-left: 10px;">Hard 👿</p> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-el" id="Hector">
+                                                        <div class="nav-ele-name">
+                                                            <div class="photo-progress">
+                                                                <div class="photo"><img style="width:50px;" src="./user-photo/insane.png" alt="robot"></div>
+                                                          </div>
+                                                            <p style="margin-left: 10px;">Insane 💀</p> 
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="first activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Who plays first</span></div>
+                                            <div class="choose-ele">
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="random">
+                                                        <div class="nav-ele-name">
+                                                            <p>Random - <i class="fa-solid fa-x x-child"></i> / <i class="fa-solid fa-o o-child"></i></p>
+                                                            <input id="answer-input" type="hidden" value="random" name="first">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                       <span class="material-symbols-outlined">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+
+                                                <nav class="choose-ele-nav">
+                                                    <div class="nav-el choosed" id="random">
+                                                        <div class="nav-ele-name">
+                                                            <p>Random - <i class="fa-solid fa-x x-child"></i> / <i class="fa-solid fa-o o-child"></i></p> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-el" id="i-st">
+                                                        <div class="nav-ele-name">
+                                                            <p>I start first - <i class="fa-solid fa-x x-child"></i></p> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-el" id="opp-st">
+                                                        <div class="nav-ele-name">
+                                                            <p>Opponent start first - <i class="fa-solid fa-o o-child"></i></p>
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                        <!--ele-->
+
+                                        <div class="Tpoint activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Points</span></div>
+                                            <div class="choose-ele">
+                                                 <!---->
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="3p">
+                                                        <div class="nav-ele-name">
+                                                            <p>3 for 🏆</p>
+                                                            <input id="answer-input" type="hidden" value="3p" name="points">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                       <span class="material-symbols-outlined">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <nav class="choose-ele-nav">
+                                                    <div class="nav-el " id="5p">
+                                                        <div class="nav-ele-name">
+                                                            <p>5 for 🏆</p>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="nav-el" id="unlimitp">
+                                                        <div class="nav-ele-name">
+                                                            <p>Unlimited</p>
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                        <!--ele-->
+                    
+                                        <div class="board activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Board</span></div>
+                                            <div class="choose-ele">
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="xo-3x3">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 3x3</p>
+                                                            <input id="answer-input" type="hidden" value="xo-3x3" name="board-type">
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="3x3 imge" ></div-->
+                    
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                       <span class="material-symbols-outlined">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+                                                <nav class="choose-ele-nav">
+                                                    <div class="nav-el choosed" id="xo-3x3">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 3x3 <span style="font-size: 0.7em; color:gray">(Default)</span>
+                                                            </p>
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="3x3 imge" ></div-->
+                                                    </div>
+                                                    <div class="nav-el" id="xo-4x4">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 4x4</p>
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="4x4 imge"></div-->
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="start-btn">
+                                    <button type="submit" id="start-btn">Start game</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!----------------------------->
+                        <div class="two-players none2">
+                          <div class="cdk-overlay " ></div>
+                            <div class="close-menu">
+                                <div id="close-btn"  name="Close"  onclick="afClBtnCCl()" class="icon menu-btn"><span class="material-symbols-outlined">close</span></div>
+                            </div>
+                            <form action=""  class="2player-form first-form">
+                                <div class="note--activity">
+                                    <div class="xo-icon-part">
+                                        <div class="xo-icon">
+                                            <i class="fa-solid fa-x x-child"></i>
+                                            <i class="fa-solid fa-o o-child"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="game-activity">
+                                        <div class="Tpoint activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Points</span></div>
+                                            <div class="choose-ele">
+                                                 <!---->
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="3p">
+                                                        <div class="nav-ele-name">
+                                                            <p>3 for 🏆</p>
+                                                            <input id="answer-input" type="hidden" value="3p" name="points">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                       <span class="material-symbols-outlined">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <nav class="choose-ele-nav">
+                                                    <div class="nav-el " id="5p">
+                                                        <div class="nav-ele-name">
+                                                            <p>5 for 🏆</p>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="nav-el" id="unlimitp">
+                                                        <div class="nav-ele-name">
+                                                            <p>Unlimited</p>
+                                                        </div>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+
+                                       <!---->
+                                        <div class="board activity-el">
+                                            <div class="input-text"><span class="spcial-span-color">Board</span></div>
+
+                                            <div class="choose-ele">
+                                                <div class="choose-ele-list-btn " onclick="navActiv(this)">
+                                                    <div class="nav-el" id="xo-3x3">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 3x3</p>
+                                                            <input id="answer-input" type="hidden" value="xo-3x3"
+                                                                name="board-type">
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="3x3 imge" ></div-->
+
+                                                    </div>
+                                                    <div class="nav-ele-icon">
+                                                        <span class="material-symbols-outlined">arrow_drop_down</span>                                                    </div>
+                                                </div>
+                                            <nav class="choose-ele-nav">
+                                                    <div class="nav-el choosed" id="xo-3x3">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 3x3 <span
+                                                                    style="font-size: 0.7em; color:gray">(Default)</span>
+                                                            </p>
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="3x3 imge" ></div-->
+                                                    </div>
+                                                    <div class="nav-el" id="xo-4x4">
+                                                        <div class="nav-ele-name">
+                                                            <p>XO 4x4</p>
+                                                        </div>
+                                                        <!--div class="board-img"><img src="" alt="4x4 imge"></div-->
+                                                    </div>
+                                                </nav>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="start-btn">
+                                    <button type="submit" id="start-btn">Start game</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="right"><p>Copyright © <span id="footer-year"></span> xo game - <a href="https://newpost-1.firebaseapp.com/"target="_blank"> Yahia Badr</a></p> </div>
+            </div>
+        </footer>
+        
+        <div class="cdk-overlay-container2 hidden  ">
+            
+        </div>
+    
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let header = document.querySelector('header')
+        let firstPMainS = document.querySelector('.x-o--icons--buttons')
+                , fistForms = document.querySelectorAll(".first-form")
+                , start = document.querySelectorAll('.first-form #start-btn')
+                , iconX =document.querySelector('.x-icon i')
+                , iconO =document.querySelector('.o-icon i')
+                
+             let iconsss = () => {
+                iconX.style.cssText ='animation: breathing 5s ease-out infinite normal;'
+                setTimeout(() => {iconO.style.cssText ='animation: breathing 5s ease-out infinite normal;'}, 1200);
+            } 
+            iconsss()
+
+            fistForms.forEach(form => {
+                form.addEventListener('submit', (p) => {
+                    p.preventDefault()
+                    localClear('nickNameP1', 'nickNameP2', 'nickNamePCpu', historyN,)
+
+                    let element0 = sessionStorage.getItem('vol');
+                    let element1 = sessionStorage.getItem('first');
+                    sessionStorage.clear()
+                    sessionStorage.setItem('vol', element0); 
+                    sessionStorage.setItem('first', element1); 
+
+                   window.location.href = './game.html'
+                    var formData = new FormData(form);
+                    for (const [i, p] of formData) {
+
+                        if (i == 'first') {
+                            fst(p)
+                        }
+                        if (i == 'diff') {localStorage.setItem('diff' ,JSON.stringify(p) );}
+
+                        if (i == 'points') {
+                            // window.location.href = 'j.html'
+                            tP(p)
+                        }
+
+                        if (i == 'board-type') {
+                            if (p == 'xo-3x3') {
+                                bT(p)
+
+                            }
+                            else if (p == 'xo-4x4') {
+                                bT(p)
+                            }
+                        }
+                    }
+                    // sessionStorage.hp = JSON.stringify({t : tp})
+                    localStorage.setItem('gameName', JSON.stringify(form.classList[0]))
+                })
+            });
+
+        
+         //////////////////////
+         
+       
+     //////////////////////
+
+    function tP(p) {
+        localStorage.setItem('tP' ,JSON.stringify(p) )
+        return localStorage.tP
+            
+        }
+     function bT(p) {
+       localStorage.setItem('bt' ,JSON.stringify(p) )
+        return localStorage.bt
+         
+     }
+     function fst(p) {
+       localStorage.setItem('fst' ,JSON.stringify(p) )
+        return localStorage.fst
+         
+     }
+     const date = new Date
+     const dateYear = date.getFullYear()
+     document.getElementById('footer-year').innerHTML = dateYear
+     document.cookie ='first=yes;'
+    </script>
+    <script src="var.js"></script>
+  <script src="win-lose.js"></script>
+  <script src="design-and-task.js"></script>
+  <script src="AI.js"></script>
+  <script src="xo.js"></script>
+</body>
+
+</html>

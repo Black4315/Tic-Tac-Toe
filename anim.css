@@ -1,0 +1,156 @@
+@keyframes ticLine {
+    50%{
+        box-shadow: 0 0 0.6rem var(--primary-color-2);
+    }
+    
+}
+@keyframes winner {
+    100% {
+        opacity: 1;
+        z-index: 1;
+        visibility: visible;
+
+    }
+
+}
+
+@keyframes winnerLine {
+
+    100% {
+        opacity: 1;
+        height: 17.2em;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+
+}
+
+@keyframes winnerLineD {
+
+    100% {
+        opacity: 1;
+        height: 23em;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+
+}
+@keyframes appearX {
+    0%{
+        clip-path: polygon(0 0, 100% 0, 100% 12%, 0 12%);        
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+@keyframes appearO {
+    0%{
+        stroke-dashoffset: 143;
+        stroke-dasharray: 153;
+        
+    }
+    100%{    
+        stroke-dashoffset: 143;
+        stroke-dasharray: 307;
+        
+    }
+}
+@keyframes winBS {
+    50% {
+        visibility: hidden;
+    }
+
+}
+@keyframes cpNpMenu {
+    0%{
+        transform: scale(.7);
+        opacity: 0;
+    }  15%{
+        transform: scale(.7);
+        opacity: 0;
+    }
+    40%{
+        transform: scale(.9);
+        opacity: .5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
+@keyframes app-prog {
+    0%{
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    20%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(0.9);
+    }
+    60%{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    80%{
+        transform: scale(0.97);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes mat-tooltip-show {
+
+
+0% {
+    opacity: 0;
+    transform: scale(0);
+}
+50% {
+    opacity: .5;
+    transform: scale(0.99);
+}
+
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+@keyframes display{
+0%{
+    opacity: 0;
+
+}100%{
+    opacity: 1  ;
+
+}
+}
+
+@keyframes breathing {
+    0% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    25% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    60% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  

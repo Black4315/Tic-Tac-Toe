@@ -1,0 +1,35 @@
+[
+    {
+       "id": "cdk",
+       "content":[
+        {
+            "role":"exit-page",
+            "content":"<div onclick=\"closeCdkMenu()\" class=\"cdk-overlay dark active\"></div>\n<div class=\"cdk-overlay-menu\"  plC=\"center\">\n    <div class=\"cdk-overlay-menu-container\">\n        <h1 class=\"ak-tl\">Don't leave , you will lose ! </h1>\n        <div class=\"cdk-button\">\n            <button  onclick=\"closeCdkMenu()\" type=\"submit\">Cancel</button>\n            <button  role=\"exit-btn\" onclick=\"exitPage()\" class='chosen-to'type=\"submit\">Exit room</button>\n        </div>\n    </div>\n</div>"
+        },
+        {
+            "role":"get-name--AI-game",
+            "content":"<div onclick=\"closeCdkMenu()\" class=\"cdk-overlay dark active\"></div>\n<div class=\"cdk-overlay-menu\" pC=\"center\" >\n    <form class=\"name-ai-Md\" action=\"\" method=\"get\">\n          <div class=\"cdk-overlay-menu-container\"style=\"align-item:start;\">\n\n<h1 class=\"ak-tl\" style=\"color: var(--primary-color);\">Who are you ?</h1>\n<div class=\"cdk-input\">\n    <input id=\"nickNamePCpu\" maxlength=\"25\" type=\"text\" roll=\"who\" name=\"nickNamePCpu\" placeholder=\"Nickname\">\n</div>\n<div class=\"cdk-button\">\n    <button type=\"submit\"class = \"n-active\"  id=\"sub-btn\" style=\"margin: 0;\">Continue</button>\n</div>\n</div>\n    </form>\n</div> "
+        },
+        {
+            "role":"get-name--2p-game", 
+            "content":" <div onclick=\"closeCdkMenu()\" class=\"cdk-overlay dark active\"></div>\n <div class=\"cdk-overlay-menu\" pC=\"center\" >\n <form class=\"name-2p-Md\" action=\"\" method=\"get\">\n <div class=\"cdk-overlay-menu-container\">\n <div class=\"cdk-input player1\">\n  <h4> <i class=\"fa-solid fa-x x-child\"></i> Player</h4>\n <input id=\"nickNameP1\"style=\"color: var(--primary-color-2);  maxlength=\"25\" type=\"text\" placeholder=\"Nickname\" name=\"nickNameP1\">\n    </div>\n    <div class=\"cdk-input player2\">\n<h4><i class=\"fa-solid fa-o o-child\"></i> Player </h4>\n  <input id=\"nickNameP2\"  maxlength=\"25\" \" type=\"text\" name=\"nickNameP2\" placeholder=\"Nickname\">\n            </div>\n            <div class=\"cdk-button\" >\n  <button id=\"sub-btn\" class = \"n-active\" style=\"margin: 0;\" type=\"submit\">Continue</button>\n            </div>\n            </div>\n                </form>\n            </div> "
+        }
+       
+       ]
+    } ,
+    {
+        "id": "photo",
+        "content":[
+             "./user-photo/bear.png"
+            ,"./user-photo/chicken.png"
+            ,"./user-photo/eagle.png"
+            ,"./user-photo/loin.png"
+            ,"./user-photo/panda.png"
+            ,"./user-photo/panda2.png"
+            ,"./user-photo/tiger.png"
+            ,"./user-photo/images.jfif"
+        ]
+
+    }
+
+]                                                                               

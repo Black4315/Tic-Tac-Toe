@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://xo-game1.firebaseapp.com/sitemap.xml
