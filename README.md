@@ -26,11 +26,12 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 
 ![Tic-Tac-Toe Snapshot](assets/images/tic-tac-toe-snapshot.png)
 
+## ❌⭕  Demo
+[Live Demo](https://xo-game1.web.app/)
+
+
 ## 📄 License
 MIT License © 2025 Yahia Badr
-
-## 🌐 Demo
-[Live Demo](https://xo-game1.web.app/)
 
 ## 🎮 Game Flow:
 1. **Loading Screen**: Perfectly designed loading screen that ensures a smooth entry to the game.
