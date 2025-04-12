@@ -32,7 +32,7 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 
 
 ## 📄 License
-MIT License © 2025 Yahia Badr
+MIT License © 2023 Yahia Badr
 
 ## 🎮 Game Flow:
 1. **Loading Screen**: Perfectly designed loading screen that ensures a smooth entry to the game.
