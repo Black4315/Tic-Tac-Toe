@@ -24,7 +24,7 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 
 ## 📸 Snapshot
 
-![Tic-Tac-Toe Snapshot](assets/images/tic-tac-toe-snapshot.png)
+![Tic-Tac-Toe Snapshot](./public/snapshot.png)
 
 
 ## ❌⭕  Demo
