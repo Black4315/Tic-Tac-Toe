@@ -30,13 +30,6 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 ## ❌⭕  Demo
 [Visit the live site](https://xo-game1.web.app/)
 
-## 🧑‍💻 Let's Work Together
-
-I’m open for custom projects and freelance work!
-
-📩 Reach me at **[yahialord4315@gmail.com](mailto:yahialord4315@gmail.com)**  
-or check out my **[portfolio](https://portfolio25-one.vercel.app/)**.
-
 ## 📄 License
 MIT License © 2023 Yahia Badr
 
@@ -61,3 +54,10 @@ MIT License © 2023 Yahia Badr
 ## 💬 Customizable Features:
 - **Sound Effects**: Sounds can be customized or replaced with different effects.
 - **Avatar Set**: Add or change the cartoon animal avatars by editing the random selection list.
+
+## 🧑‍💻 Let's Work Together
+
+I’m open for custom projects and freelance work!
+
+📩 Reach me at **[yahialord4315@gmail.com](mailto:yahialord4315@gmail.com)**  
+or check out my **[portfolio](https://portfolio25-one.vercel.app/)**.
