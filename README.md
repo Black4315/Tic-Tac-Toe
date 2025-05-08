@@ -2,7 +2,7 @@
 
 A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaScript**. Featuring a stunning dark theme with purple and pink luxury colors, this game offers a smooth user experience, including animations, sound effects, and automatic selection of cute cartoon animal avatars. Players compete to earn a **victory cup** after reaching a **point threshold** with beautiful animations and celebratory confetti effects.
 
-## ✨ Features
+## Features
 - **Perfect Loading Screen**: A smooth and engaging loading experience to start the game, no matter the device or screen size.
 - **Menu Options**: Choose between playing against **AI** (with 4 difficulty levels) or a **friend**.
 - **AI Difficulty**: The AI is set to 4 different levels of difficulty, based on a custom algorithm (not a standard algorithm).
@@ -16,7 +16,7 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 - **Responsive & Interactive**: Fully responsive, designed to work seamlessly on all devices with a luxury purple and pink color scheme.
 - **Pop-up Confirmation**: Confirmation pop-up when exiting the game to ensure players don’t leave accidentally.
 
-## 🚀 Tech Stack
+## Tech Stack
 - **HTML**
 - **CSS**
 - **JavaScript**
@@ -27,13 +27,10 @@ A luxurious **Tic-Tac-Toe** (XO) game built with **HTML**, **CSS**, and **JavaSc
 ![Tic-Tac-Toe Snapshot](./snapshot.png)
 
 
-## ❌⭕  Demo
+## ❌⭕ Demo
 [Visit the live site](https://xo-game1.web.app/)
 
-## 📄 License
-MIT License © 2023 Yahia Badr
-
-## 🎮 Game Flow:
+## Game Flow:
 1. **Loading Screen**: Perfectly designed loading screen that ensures a smooth entry to the game.
 2. **Choose Mode**: Select between **AI** or **Friend** mode.
 3. **AI Levels**: Choose the AI difficulty (1-4 levels) for a challenge.
@@ -51,13 +48,17 @@ MIT License © 2023 Yahia Badr
 - **Sound Enhancements**: Use of **Howler.js** for smooth and immersive sound effects during the game.
 - **Responsive Design**: Optimized for all devices, providing an engaging experience on any screen size.
 
-## 💬 Customizable Features:
+## Customizable Features:
 - **Sound Effects**: Sounds can be customized or replaced with different effects.
 - **Avatar Set**: Add or change the cartoon animal avatars by editing the random selection list.
 
-## 🧑‍💻 Let's Work Together
+## Let's Work Together
 
 I’m open for custom projects and freelance work!
 
 📩 Reach me at **[yahialord4315@gmail.com](mailto:yahialord4315@gmail.com)**  
 or check out my **[portfolio](https://portfolio25-one.vercel.app/)**.
+
+## 📄 License
+MIT License © 2023 Yahia Badr
+
